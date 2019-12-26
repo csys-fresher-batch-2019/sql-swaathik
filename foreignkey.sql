@@ -1,0 +1,12 @@
+drop table tasks ;
+create table tasks (task_id number,task_name varchar(20));
+insert into tasks(task_id,task_name) values(1,'Install Oracle');
+select *from tasks;
+drop table users_table;
+create table users_table(user_id number,user_name varchar(20),user_email varchar(20),user_password varchar(20));
+insert into users_table(user_id,user_name,user_email,user_password) values(1,'swaathi','swaathi@gmail.com','12345');
+select*from users_table;
+drop table users_task;
+create table users_task(user_id number,task_id number,assigned_to varchar(20));
+insert into users_task(user_id,task_id,assigned_to) values(1,1,'priya');
+select*from users_task;
