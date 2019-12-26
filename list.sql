@@ -2,10 +2,11 @@ create table list(
 task_no number,
   task_name varchar2(50) not null,
   emp_name varchar2(50) not null,
-  deadline_date date,
-  completed_date date,
-  status varchar2(10),
-  priority_no number,
+  deadline_date date not null,
+  completed_date date not null,
+  status varchar2(10) not null,
+  priority_no number not null,
+  constraint priority_no_uq unique(priority_no),
   constraint task_no_pk primary key(task_no),
   constraint status_cq check(status in('completed','bending'))
 );
