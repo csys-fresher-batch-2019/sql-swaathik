@@ -17,7 +17,7 @@ insert into list(task_no,
                  completed_date,
                  priority_no,
                  status) values (1,'Install Oracle Software','Swaathi',to_date('20-12-2019','dd-MM-yyyy'),to_date('20-12-2019','dd-MM-yyyy'),bending,1);
-                             update list set completed_date = '23-12-2019';
+                             update list set completed_date = '23-12-2019'where task_no=1;
 insert into list(task_no,
                  task_name,
                  emp_name,
