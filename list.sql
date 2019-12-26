@@ -22,6 +22,6 @@ insert into list(task_no,
                  deadline_date,
                  completed_date,
                  priority_no,
-                 status) values (2,'Install jdk Software','Sruthi',to_date('21-12-2019','dd-MM-yyyy'),to_date('20-12-2019','dd-MM-yyyy'),completed.2);
+                 status) values (2,'Install jdk Software','Sruthi',to_date('21-12-2019','dd-MM-yyyy'),to_date('20-12-2019','dd-MM-yyyy'),completed,2);
 
 select *from list Order by priority_no;
