@@ -5,8 +5,8 @@ task_no number,
   deadline_date date not null,
   completed_date date ,
   status varchar2(10) not null,
-  priority_no number not null,
-  constraint priority_no_uq unique(priority_no),
+  priority_no number ,
+  constraint priority_no_pk primary key(priority_no),
   constraint task_no_pk primary key(task_no),
   constraint status_cq check(status in('completed','bending'))
 );
