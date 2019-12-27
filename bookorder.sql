@@ -16,10 +16,10 @@ order_id number primary key,
 user_name varchar2(50)not null,
 book_id number not null ,
 ordered_date timestamp not null,
-delivered_date timestamp not null,
+delivered_date timestamp ,
 total_amount number not null,
 quantity number not null,
-status varchar2(30) not null,
+status varchar2(30) not null default ,
 constraint book_id_fk foreign key(book_id)references books(book_id),
 constraint quantity_cq check(quantity>=1)
 );
