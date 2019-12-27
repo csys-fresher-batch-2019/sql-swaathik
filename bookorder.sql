@@ -19,9 +19,10 @@ ordered_date timestamp not null,
 delivered_date timestamp ,
 total_amount number not null,
 quantity number not null,
-status varchar2(30) not null default ,
+status varchar2(30) not null default 'pending' check(status in('completed','pending')) ,
 constraint book_id_fk foreign key(book_id)references books(book_id),
-constraint quantity_cq check(quantity>=1)
+constraint quantity_cq check(quantity>=1),
+constraint total_amount_cq check(total_amount>=0)                                                             
 );
 insert into books(book_id,book_name,author_name,price,publisher,version,category_book,active) 
 values(1,'Java','JamesGosling',900,'AA Publishers',1,'Technical',1);
