@@ -13,13 +13,17 @@ create table stock(
 book_id number primary key,
 stock_id number not null,
 book_name varchar2(30) not null,
-quantity number not null
+quantity number not null,
+  constraint book_id_fk foreign key(book_id)references books(book_id),
+constraint quantity_cq check(quantity>=1)
 );
 drop table books;
 create table books(
 book_id number primary key,
 book_name varchar2(20) not null,
-price number not null
+price number not null,
+  constraint book_id_fk foreign key(book_id)references books(book_id),
+  constraint price_cq check(price>=0)
 );
 drop table orders;
 create table orders(
@@ -27,8 +31,9 @@ order_id number not null unique,
 user_name varchar2(30) not null,
 total_amount number not null,
 ordered_date timestamp not null,
-delivered_date timestamp not null,
-status varchar2(30)
+delivered_date timestamp,
+status varchar2(30) default 'Pending' check(status in('Pending','not available','Completed')),
+constraint total_amount_cq check(total_amount>=0)
 );
 insert into books(book_id,book_name,price) values
 (1,'java',400);
