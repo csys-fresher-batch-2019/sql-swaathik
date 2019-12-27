@@ -14,7 +14,7 @@ book_id number primary key,
 stock_id number not null,
 book_name varchar2(30) not null,
 quantity number not null,
-  constraint book_id_fk foreign key(book_id)references books(book_id),
+constraint book_id_fk foreign key(book_id)references books(book_id),
 constraint quantity_cq check(quantity>=1)
 );
 drop table books;
