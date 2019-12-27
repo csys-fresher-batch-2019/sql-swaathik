@@ -5,9 +5,9 @@ book_name varchar2(50) not null,
 author_name varchar2(50)not null,
 price number not null,
 publisher varchar2(50) not null,
-version number not null,
+version number,
 category_book varchar2(50)not null,
-active number not null,
+active number not null default 1 check(active in(1,0)),
 constraint price_cq check(price>=0)
 );
 drop table orders;
@@ -34,7 +34,7 @@ insert into orders(order_id,user_name,book_id,ordered_date,delivered_date,total_
 values(1,'Sruthi',2,sysdate,sysdate,900,3,'Not available');
 
 Alter table orders
-add comments varchar(100);
+add comments varchar2(100);
 
 
 insert into orders(comments)
