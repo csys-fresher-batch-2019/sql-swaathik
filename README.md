@@ -8,7 +8,9 @@
 create table courses(course_code number,
                      course_name varchar2(40)
                      );
+                     
 Query:
+
 select*from courses;
 
 
