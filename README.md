@@ -17,10 +17,9 @@ select*from courses;
 ```
 ### Feature 2: List course details and batches
 ```sql
-      alter table courses add course_fee number not null,
-      alter table courses add course_duration_weeks number,
-      alter table courses add  pre_req varchar2(100)
-                     );
+      alter table courses add course_fee number not null;
+      alter table courses add course_duration_weeks number;
+      alter table courses add  pre_req varchar2(100);
 create table batches(batch_code number Primary key ,
                      course_code number,
                      starting_date date not null,
