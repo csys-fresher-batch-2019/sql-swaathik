@@ -18,7 +18,7 @@ select*from courses;
 ### Feature 2: List course details and batches
 ```sql
 create table courses(course_code number primary key,
-                     course_name varchar2(40) not null,
+                     course_name varchar2(40) not null unique,
                      course_fee number not null,
                      course_duration_weeks number,
                      pre_req varchar2(100)
@@ -29,7 +29,6 @@ create table batches(batch_code number Primary key ,
                      end_date date,
                      timings varchar2(20) not null,
                      foreign key(course_code) references courses(course_code)
-                     
                      );
   ```
                      
