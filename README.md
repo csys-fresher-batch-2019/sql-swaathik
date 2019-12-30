@@ -31,7 +31,8 @@ create table batches(batch_code number Primary key ,
                      starting_date date not null,
                      end_date date,
                      timings varchar2(20) not null,
-                     foreign key(course_code) references courses(course_code)
+                     foreign key(course_code) references courses(course_code),
+                     constraint batch_date_cq check(starting_date <= end_date)
                      );
   ```
                      
