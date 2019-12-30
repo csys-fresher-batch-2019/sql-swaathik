@@ -7,7 +7,7 @@
 ### Feature 1: List all Course
 ```sql
 create table courses(course_code number primary key,
-                     course_name varchar2(40) not null
+                     course_name varchar2(40) not null unique
                      );
 ```
                      
@@ -17,11 +17,9 @@ select*from courses;
 ```
 ### Feature 2: List course details and batches
 ```sql
-create table courses(course_code number primary key,
-                     course_name varchar2(40) not null unique,
-                     course_fee number not null,
-                     course_duration_weeks number,
-                     pre_req varchar2(100)
+      alter table courses add course_fee number not null,
+      alter table courses add course_duration_weeks number,
+      alter table courses add  pre_req varchar2(100)
                      );
 create table batches(batch_code number Primary key ,
                      course_code number,
