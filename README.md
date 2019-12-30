@@ -1,5 +1,5 @@
 # Student Management System
-*http://stud_education_portal.in
+* http://studeduportal.in
 ## Features
 
 * Students should be able to view all the course titles.
