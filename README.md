@@ -25,11 +25,11 @@ values(333,'HTML',5000,1);
 select*from courses;
 ```
 #### Table: Courses
-     | course_code 	| course_name 	| course_fee 	| course_duration_weeks 	| pre_req 	|
-|:-----------:	|:-----------:	|:----------:	|:---------------------:	|:--------------:	|
-| 111 	| C++ 	| 8000 	| 2 	| C Language 	|
-| 222 	| Core java 	| 10000 	| 3 	| Basics of oops 	|
-| 333 	| HTML 	| 5000 	| 1 	| - 	|
+ | course_code | course_name | course_fee | course_duration_weeks |     pre_req    |
+|:-----------:|:-----------:|:----------:|:---------------------:|:--------------:|
+|     111     |     C++     |    8000    |           2           |   C Language   |
+|     222     |  Core java  |    10000   |           3           | Basics of oops |
+|     333     |     HTML    |    5000    |           1           |        -       |
 ### Feature 2: List batch details and student details
 ```sql
 create table batches(batch_code number Primary key ,
