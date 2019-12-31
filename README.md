@@ -44,11 +44,10 @@ create table batches(batch_code number Primary key ,
  Query:
  ```sql
 
-insert into batches(batch_code,course_code,starting_date,end_date,timings)
-values(01,111,to_date('01-01-2010','dd-MM-yyyy'),to_date('14-1-2020','dd-MM-yyyy'),'3.00PM TO 6.00PM');
+ 
+insert into batches values(121,111,'13-MAY-08','17-JUN-08','4:30 TO 6:00 PM'); 
 select*from batches;
-insert into students(adm_no,batch_code,roll_no,full_name,father_name,email_id,phone_no,date_of_joining)
-values(123,01,23,'Meena','Ramesh','meenaramesh@gmail.com','9362931110',to_date('01-01-2010','dd-MM-yyyy'));
+insert into students values(123,01,23,'Meena','Ramesh','meenaramesh@gmail.com','9362931110','13-MAY-08');
 select*from students;
 ```
 
