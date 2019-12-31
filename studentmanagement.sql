@@ -51,3 +51,12 @@ values(1,123,2000,'12-MAY-08','Paid registration fees');
 insert into payments(receipt_no,adm_no,amount_paid,pay_date,re_marks)
 values(2,456,5000,'11-JUNE-08','Paid course fees');
 select*from payments;
+----Order----
+select*from students order by batch_code,date_of_joining;
+----Display all payments made in the particular month----
+select*from payments where pay_date between '1-MAY-08' AND '31-MAY-08';
+----Display Payment type----
+select*from payments where re_marks like '%cheque%';
+----Display Batches that are currently running----
+select*from batches where end_date IS NULL;
+
