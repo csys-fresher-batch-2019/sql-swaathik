@@ -57,6 +57,25 @@ insert into students(adm_no,batch_code,roll_no,full_name,father_name_or_guardian
 values(456,131,42,'Sathya','Murali','sathyamurali@gmail.com','9837489490','12-JUNE-08');
 select*from students;
 ```
+### Feature 3: List Payment Details
+```sql
+   create table payments(receipt_no number primary key,
+                      adm_no number not null unique,
+                      amount_paid number not null,
+                      pay_date date not null,
+                      re_marks varchar2(30),
+                      foreign key(adm_no)references students(adm_no),
+                      constraint amount_paid_cq check(amount_paid>0)
+                       );
+```
+Query:
+```sql
+insert into payments(receipt_no,adm_no,amount_paid,pay_date,re_marks)
+values(1,123,2000,'12-MAY-08','cash');
+insert into payments(receipt_no,adm_no,amount_paid,pay_date,re_marks)
+values(2,456,5000,'11-JUNE-08','cheque');
+select*from payments;
+'''
 
 
 
