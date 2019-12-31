@@ -24,7 +24,7 @@ insert into courses(course_code,course_name,course_fee,course_duration_weeks)
 values(333,'HTML',5000,1);
 select*from courses;
 ```
-### Feature 2: List batch details
+### Feature 2: List batch details and student details
 ```sql
 create table batches(batch_code number Primary key ,
                      course_code number not null unique,
@@ -34,6 +34,11 @@ create table batches(batch_code number Primary key ,
                      foreign key(course_code) references courses(course_code),
                      constraint batch_date_cq check(starting_date <= end_date)
                      );
+ create table students(adm_no number primary key,batch_code number not null unique,
+                       roll_no number not null unique,full_name varchar2(50) not null,
+                       father_name varchar2(50) not null,email_id varchar2(100) not null,
+                       phone_no varchar2(15) not null,date_of_joining date,
+                       foreign key(batch_code) references batches(batch_code));
   ```
                      
  Query:
@@ -42,6 +47,9 @@ create table batches(batch_code number Primary key ,
 insert into batches(batch_code,course_code,starting_date,end_date,timings)
 values(01,111,to_date('01-01-2010','dd-MM-yyyy'),to_date('14-1-2020','dd-MM-yyyy'),'3.00PM TO 6.00PM');
 select*from batches;
+insert into students(adm_no,batch_code,roll_no,full_name,father_name,email_id,phone_no,date_of_joining)
+values(123,01,23,'Meena','Ramesh','meenaramesh@gmail.com','9362931110',to_date('01-01-2010','dd-MM-yyyy'));
+select*from students;
 ```
 
 
