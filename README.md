@@ -71,7 +71,7 @@ select*from students;
 Query:
 ```sql
 insert into payments(receipt_no,adm_no,amount_paid,pay_date,re_marks)
-values(1,123,2000,'12-MAY-08','cash');
+values(1,123,2000,'11-MAY-08','cash');
 insert into payments(receipt_no,adm_no,amount_paid,pay_date,re_marks)
 values(2,456,5000,'11-JUNE-08','cheque');
 select*from payments;
