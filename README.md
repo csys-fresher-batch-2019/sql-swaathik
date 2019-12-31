@@ -2,7 +2,9 @@
 * http://studeduportal.in
 ## Features
 
-* Students should be able to view all the course titles.
+* Students should be able to view all the courses.
+* Students should be able to view their batch details.
+* Students should be able to view their payment details.
 
 ### Feature 1: List all Course
 ```sql
