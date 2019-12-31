@@ -9,8 +9,10 @@
 | batch_code | course_code | starting_date | ending_date |     timings     |
 |:----------:|:-----------:|:-------------:|:-----------:|:---------------:|
 |     121    |     111     |   13-MAY-08   |  17-JUN-08  | 4:30 TO 6:00 PM |
+|     131    |     222     |   12-JUNE-08  |  -          | 4:00 TO 6:00 PM |
 
 #### Table: Students
-| adm_no | batch_code | roll_no | full_name | father_name_or_guardian_name | email_id              | phone_no   | date_of_joining |
-|:------:|:----------:|:-------:|:---------:|:----------------------------:|-----------------------|------------|-----------------|
-|   123  |     01     |    23   |   Meena   |            Ramesh            | meenaramesh@gmail.com | 9362931110 | 13-MAY-08       |
+| adm_no | batch_code | roll_no | full_name | father_name_or_guardian_name |        email_id        |  phone_no  | date_of_joining |
+|:------:|:----------:|:-------:|:---------:|:----------------------------:|:----------------------:|:----------:|:---------------:|
+|   123  |     01     |    23   |   Meena   |            Ramesh            |  meenaramesh@gmail.com | 9362931110 |    13-MAY-08    |
+|   456  |     131    |    42   |   Sathya  |            Murali            | sathyamurali@gmail.com | 9837489490 |    12-JUNE-08   |
