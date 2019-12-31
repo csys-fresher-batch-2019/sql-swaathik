@@ -37,7 +37,7 @@ create table batches(batch_code number Primary key ,
                      );
  create table students(adm_no number primary key,batch_code number not null unique,
                        roll_no number not null unique,full_name varchar2(50) not null,
-                       father_name varchar2(50) not null,email_id varchar2(100) not null,
+                       father_name_or_guardian_name varchar2(50)not null ,email_id varchar2(100) not null,
                        phone_no varchar2(15) not null,date_of_joining date,
                        foreign key(batch_code) references batches(batch_code));
   ```
