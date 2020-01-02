@@ -77,37 +77,131 @@ values(141,222,'19-OCT-2019','27-DEC-2019','6.00 TO 8.00 PM');
                        father_name_or_guardian_name varchar2(50)not null ,email_id varchar2(100) not null,
                        phone_no varchar2(15) not null,date_of_joining date);
                        foreign key(batch_code) references batches(batch_code));
- 
-insert into batches (batch_code,course_code,starting_date,end_date,timings)
-values(121,111,'13-MAY-08','17-JUN-08','4:30 TO 6:00 PM'); 
-insert into batches (batch_code,course_code,starting_date,timings)
-values(131,333,'12-JUNE-08','4.00 TO 6:00 PM'); 
-select*from batches;
 insert into students(adm_no,batch_code,roll_no,full_name,father_name_or_guardian_name,email_id,phone_no,date_of_joining)
 values(123,121,23,'Meena','Ramesh','meenaramesh@gmail.com','9362931110','13-MAY-08');
 insert into students(adm_no,batch_code,roll_no,full_name,father_name_or_guardian_name,email_id,phone_no,date_of_joining)
 values(456,131,42,'Sathya','Murali','sathyamurali@gmail.com','9837489490','12-JUNE-08');
+insert into students(adm_no,batch_code,roll_no,full_name,father_name_or_guardian_name,email_id,phone_no,date_of_joining)
+values(170,131,63,'ajmeer','abdul','ajmeer@gmail.com','9362931110','13-MAY-2019');
+insert into students(adm_no,batch_code,roll_no,full_name,father_name_or_guardian_name,email_id,phone_no,date_of_joining)
+values(200,131,82,'helen','george','helen@gmail.com','9837489490','12-JUNE-2019');
+insert into students(adm_no,batch_code,roll_no,full_name,father_name_or_guardian_name,email_id,phone_no,date_of_joining)
+values(223,121,34,'lily','balu','lilybalu@gmail.com','9362931110','13-MAY-2019');
+insert into students(adm_no,batch_code,roll_no,full_name,father_name_or_guardian_name,email_id,phone_no,date_of_joining)
+values(150,131,56,'Jasmine','ganesh','jasmine@gmail.com','9837489490','12-JUNE-2019');
+insert into students(adm_no,batch_code,roll_no,full_name,father_name_or_guardian_name,email_id,phone_no,date_of_joining)
+values(146,121,73,'babu','surya','babusurya@gmail.com','9362931110','13-MAY-2019');
+insert into students(adm_no,batch_code,roll_no,full_name,father_name_or_guardian_name,email_id,phone_no,date_of_joining)
+values(132,131,89,'vijay','karthik','vijaykarthik@gmail.com','9837489490','12-JUNE-2019');
+insert into students(adm_no,batch_code,roll_no,full_name,father_name_or_guardian_name,email_id,phone_no,date_of_joining)
+values(120,121,65,'surya','Ajith','surya@gmail.com','9362931110','13-MAY-2019');
+insert into students(adm_no,batch_code,roll_no,full_name,father_name_or_guardian_name,email_id,phone_no,date_of_joining)
+values(119,131,51,'preethi','jegan','preethijegan@gmail.com','9837489490','12-JUNE-2019');
+```
+Query
+```sql
 select*from students;
 ```
-### Feature 3: List Payment Details
+### Feature 4: List Payment Details
 ```sql
    create table payments(receipt_no number primary key,
                       adm_no number not null unique,
                       amount_paid number not null,
                       pay_date date not null,
                       re_marks varchar2(30),
-                      foreign key(adm_no)references students(adm_no),
+                      foreign key(adm_no) references students(adm_no),
                       constraint amount_paid_cq check(amount_paid>0)
                        );
+insert into payments(receipt_no,adm_no,amount_paid,pay_date,re_marks)
+values(1,123,2000,'12-MAY-2019','Cash');
+insert into payments(receipt_no,adm_no,amount_paid,pay_date,re_marks)
+values(2,456,5000,'11-DEC-2019','Cheque');
+insert into payments(receipt_no,adm_no,amount_paid,pay_date,re_marks)
+values(3,119,5000,'12-MAY-2019','Cash');
+insert into payments(receipt_no,adm_no,amount_paid,pay_date,re_marks)
+values(4,170,5000'11-MAY-2019','Cheque');
+insert into payments(receipt_no,adm_no,amount_paid,pay_date,re_marks)
+values(5,200,5000,'12-MAY-2019','Cash');
+insert into payments(receipt_no,adm_no,amount_paid,pay_date,re_marks)
+values(6,223,10000,'11-JUNE-2019','Cheque');
+insert into payments(receipt_no,adm_no,amount_paid,pay_date,re_marks)
+values(7,150,5000,'12-MAY-2019','Cheque');
+insert into payments(receipt_no,adm_no,amount_paid,pay_date,re_marks)
+values(8,146,10000,'11-JUNE-2019','Cash');
+insert into payments(receipt_no,adm_no,amount_paid,pay_date,re_marks)
+values(9,132,5000,'12-MAY-2019','Cheque');
+insert into payments(receipt_no,adm_no,amount_paid,pay_date,re_marks)
+values(10,120,10000,'11-JUNE-2019','Cash');
 ```
 Query:
 ```sql
-insert into payments(receipt_no,adm_no,amount_paid,pay_date,re_marks)
-values(1,123,2000,'11-MAY-08','cash');
-insert into payments(receipt_no,adm_no,amount_paid,pay_date,re_marks)
-values(2,456,5000,'11-JUNE-08','cheque');
 select*from payments;
-'''
-
+```
+### Feature 5: To Display records in a particular order
+```sql
+select*from students order by batch_code,date_of_joining;
+```
+### Feature 6: To Display all payments made in the particular month
+```sql
+select*from payments where pay_date between '1-MAY-08' AND '31-MAY-08';
+```
+### Feature 7:To Display payment type
+```sql
+select*from payments where re_marks like '%Cheque%';
+```
+### Feature 8: To Display batches that are currently running
+```sql
+select*from batches where end_date IS NULL;
+```
+### Feature 9: To Display batches of particular course
+```sql
+select*from batches where course_code IN(111,222);
+```
+### Feature 10: To Display due date for the payment assuming due date is 7 days from date of joining
+```sql
+select full_name,batch_code,date_of_joining,date_of_joining+7 due_date from students;
+```
+### Feature 11: To Display details of students where due date for payment is over
+```sql
+select full_name,batch_code,date_of_joining+7 from students where date_of_joining+7 < sysdate order by date_of_joining+7;
+```
+### Feature 12: To Display details of courses with a proposal increase of 10% in course fee less for courses with course fee less than or equal to a specific value
+```sql
+select course_name,course_fee,course_fee*1.1 new_fee from courses where course_fee <= 5000;
+```
+### Feature 13: To Display students whose name contains letter 'S' and fathers name contains letter 'M'
+```sql
+select*from students where full_name like '%S%' and father_name_or_guardian_name like '%M%';
+```
+### Feature 14: To Display batches that are running for more than 45 days
+```sql
+select*from batches where sysdate - starting_date > 45;
+```
+### Feature 15: To Display the difference between actual ending date and estimated ending date for batches assuming each batch takes 2 months
+```sql
+select batch_code, end_date, add_months(starting_date,2) apoxenddate,  ADD_MONTHS(starting_date,2)- end_date daysdifference from batches where course_code = 111 and end_date is not null;
+```
+### Feature 16: To Display total amount paid by all students
+```sql
+select sum(amount_paid)from payments;
+```
+### Feature 17: To display the record by grouping it for the desired usage
+```sql
+----Display batchcode and no of students in the batch---- 
+select batch_code,count(roll_no) from students group by batch_code;
+----Display batchcode,course name,starting date----
+select batch_code,course_name,starting_date from batches b,courses c where b.course_code = c.course_code;
+----Display receipt_no,full_name,amount_paid and pay_date in the order of pay_date----
+select receipt_no,full_name,amount_paid , pay_date from payments p,students s where p.adm_no = s.adm_no order by pay_date;
+----Display course name,batch_code and full_name----
+select course_name,b.batch_code,full_name from students s,batches b,courses c where b.batch_code = s.batch_code and c.course_code = b.course_code;
+----Display number of students joined for each course----
+select course_name,count(*) from students s, batches b,courses c where c.course_code=b.course_code and b.batch_code = s.batch_code group by course_name;
+----Display the amount paid by each student in a particular batch----
+select roll_no,full_name,sum(amount_paid) amount_paid from students s,payments p where s.adm_no = p.adm_no and batch_code = '121' group by s.roll_no,full_name order by roll_no;
+----Display total amount paid by each student----
+select full_name,sum(amount_paid) from payments p,students s where s.adm_no = p.adm_no group by full_name;
+----Display course name,batch code and starting date and ending date for all branches that are completed----
+select course_name,batch_code,starting_date,end_date from batches b ,courses c where b.course_code = c.course_code and end_date is not null;
 
 
