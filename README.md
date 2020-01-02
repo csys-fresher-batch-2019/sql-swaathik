@@ -203,5 +203,6 @@ select roll_no,full_name,sum(amount_paid) amount_paid from students s,payments p
 select full_name,sum(amount_paid) from payments p,students s where s.adm_no = p.adm_no group by full_name;
 ----Display course name,batch code and starting date and ending date for all branches that are completed----
 select course_name,batch_code,starting_date,end_date from batches b ,courses c where b.course_code = c.course_code and end_date is not null;
+```
 
 
