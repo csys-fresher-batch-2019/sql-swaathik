@@ -103,7 +103,24 @@ select roll_no,full_name,sum(amount_paid) amount_paid from students s,payments p
 select full_name,sum(amount_paid) from payments p,students s where s.adm_no = p.adm_no group by full_name;
 ----Display course name,batch code and starting date and ending date for all branches that are completed----
 select course_name,batch_code,starting_date,end_date from batches b ,courses c where b.course_code = c.course_code and end_date is not null;
- 
+insert into batches (batch_code,course_code,starting_date,end_date,timings)
+values(141,222,'19-OCT-2019','27-DEC-2019','6.00 TO 8.00 PM');
+insert into students(adm_no,batch_code,roll_no,full_name,father_name_or_guardian_name,email_id,phone_no,date_of_joining)
+values(170,131,63,'ajmeer','abdul','ajmeer@gmail.com','9362931110','13-MAY-08');
+insert into students(adm_no,batch_code,roll_no,full_name,father_name_or_guardian_name,email_id,phone_no,date_of_joining)
+values(200,131,82,'helen','george','helen@gmail.com','9837489490','12-JUNE-08');
+insert into students(adm_no,batch_code,roll_no,full_name,father_name_or_guardian_name,email_id,phone_no,date_of_joining)
+values(223,121,34,'lily','balu','lilybalu@gmail.com','9362931110','13-MAY-08');
+insert into students(adm_no,batch_code,roll_no,full_name,father_name_or_guardian_name,email_id,phone_no,date_of_joining)
+values(150,131,56,'Jasmine','ganesh','jasmine@gmail.com','9837489490','12-JUNE-08');
+insert into students(adm_no,batch_code,roll_no,full_name,father_name_or_guardian_name,email_id,phone_no,date_of_joining)
+values(146,121,73,'babu','surya','babusurya@gmail.com','9362931110','13-MAY-08');
+insert into students(adm_no,batch_code,roll_no,full_name,father_name_or_guardian_name,email_id,phone_no,date_of_joining)
+values(132,131,89,'vijay','karthik','vijaykarthik@gmail.com','9837489490','12-JUNE-08');
+insert into students(adm_no,batch_code,roll_no,full_name,father_name_or_guardian_name,email_id,phone_no,date_of_joining)
+values(120,121,65,'surya','Ajith','surya@gmail.com','9362931110','13-MAY-08');
+insert into students(adm_no,batch_code,roll_no,full_name,father_name_or_guardian_name,email_id,phone_no,date_of_joining)
+values(119,131,51,'preethi','jegan','preethijegan@gmail.com','9837489490','12-JUNE-08');
 
- 
+
 
