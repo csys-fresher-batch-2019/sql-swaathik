@@ -46,6 +46,12 @@ Query:
 ```sql
 select*from courses;
 ```
+#### Table: Courses
+| COURSE_CODE | COURSE_NAME | COURSE_FEE | COURSE_DURATION_DAYS |     PRE_REQ    |
+|:-----------:|:-----------:|:----------:|:--------------------:|:--------------:|
+|     111     |     C++     |    8000    |          40          |   C language   |
+|     222     |  Core java  |    10000   |          60          | Basics of oops |
+|     333     |     HTML    |    5000    |          50          |        -       |
 
 ### Feature 2: List batch details 
 ```sql
@@ -70,6 +76,12 @@ values(141,222,'19-OCT-2019','27-DEC-2019','6.00 TO 8.00 PM');
  ```sql
  select*from batches;
  ```
+ #### Table:Batches
+| BATCH_CODE | COURSE_CODE | STARTING_DATE |  END_DATE |     TIMINGS     |
+|:----------:|:-----------:|:-------------:|:---------:|:---------------:|
+|     121    |     111     |   20-MAY-19   | 30-JUL-19 | 4:30 TO 6:00 PM |
+|     131    |     333     |   13-JAN-20   |     -     | 4.00 TO 6:00 PM |
+|     141    |     222     |   19-OCT-19   | 27-DEC-19 | 6.00 TO 8.00 PM |
 ### Feature 3: List Student details
  ```sql
  create table students(adm_no number primary key,batch_code number not null ,
@@ -102,6 +114,19 @@ Query
 ```sql
 select*from students;
 ```
+#### Table: Students
+| DM_NO | BATCH_CODE | ROLL_NO | FULL_NAME | FATHER_NAME_OR_GUARDIAN_NAME |        EMAIL_ID        |  PHONE_NO  | DATE_OF_JOINING |
+|:-----:|:----------:|:-------:|:---------:|:----------------------------:|:----------------------:|:----------:|:---------------:|
+|  123  |     121    |    23   |   Meena   |            Ramesh            |  meenaramesh@gmail.com | 9362931110 |    13-MAY-08    |
+|  456  |     131    |    42   |   Sathya  |            Murali            | sathyamurali@gmail.com | 9837489490 |    12-JUN-08    |
+|  170  |     131    |    63   |   ajmeer  |             abdul            |    ajmeer@gmail.com    | 9362931110 |    13-MAY-19    |
+|  200  |     131    |    82   |   helen   |            george            |     helen@gmail.com    | 9837489490 |    12-JUN-19    |
+|  223  |     121    |    34   |    lily   |             balu             |   lilybalu@gmail.com   | 9362931110 |    13-MAY-19    |
+|  150  |     131    |    56   |  Jasmine  |            ganesh            |    jasmine@gmail.com   | 9837489490 |    12-JUN-19    |
+|  146  |     121    |    73   |    babu   |             surya            |   babusurya@gmail.com  | 9362931110 |    13-MAY-19    |
+|  132  |     131    |    89   |   vijay   |            karthik           | vijaykarthik@gmail.com | 9837489490 |    12-JUN-19    |
+|  120  |     121    |    65   |   surya   |             Ajith            |     surya@gmail.com    | 9362931110 |    13-MAY-19    |
+|  119  |     131    |    51   |  preethi  |             jegan            | preethijegan@gmail.com | 9837489490 |    12-JUN-19    |
 ### Feature 4: List Payment Details
 ```sql
    create table payments(receipt_no number primary key,
@@ -137,6 +162,19 @@ Query:
 ```sql
 select*from payments;
 ```
+#### Table:Payments
+| RECEIPT_NO | ADM_NO | AMOUNT_PAID |  PAY_DATE | RE_MARKS |
+|:----------:|:------:|:-----------:|:---------:|:--------:|
+|      1     |   123  |     2000    | 12-MAY-19 |   Cash   |
+|      2     |   456  |     5000    | 11-DEC-19 |  Cheque  |
+|      3     |   119  |     5000    | 12-MAY-19 |   Cash   |
+|      4     |   170  |     5000    | 11-MAY-19 |  Cheque  |
+|      5     |   200  |     5000    | 12-MAY-19 |   Cash   |
+|      6     |   223  |    10000    | 11-JUN-19 |  Cheque  |
+|      7     |   150  |     5000    | 12-MAY-19 |  Cheque  |
+|      8     |   146  |    10000    | 11-JUN-19 |   Cash   |
+|      9     |   132  |     5000    | 12-MAY-19 |  Cheque  |
+|     10     |   120  |    10000    | 11-JUN-19 |   Cash   |
 ### Feature 5: To Display records in a particular order
 ```sql
 select*from students order by batch_code,date_of_joining;
